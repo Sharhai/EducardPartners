@@ -1,7 +1,9 @@
-package sm.educardpartners;
+package sm.educardpartners.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import sm.educardpartners.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

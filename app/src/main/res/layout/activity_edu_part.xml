@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="sm.educardpartners.EduPArt"
+    tools:context="sm.educardpartners.ui.EduPArt"
     android:weightSum="1">
 
     <EditText
