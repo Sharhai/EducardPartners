@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="sm.educardpartners.ui.EduPArt">
+    tools:context="sm.educardpartners.ui.SplashScreenActivity">
 
     <EditText
     android:id="@+id/et_name"
