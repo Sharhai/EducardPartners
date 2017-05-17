@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
 
 android {
     compileSdkVersion 25
@@ -32,4 +34,37 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.volley:volley:1.0.0'
     testCompile 'junit:junit:4.12'
+
+    // memory leak
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //rootView di
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    //network
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    //iamge ahndling
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    //reactive
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.0.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    //restrolambda
+    retrolambdaConfig 'net.orfjackal.retrolambda:retrolambda:2.3.0'
+    // date piker
+    compile 'com.code-troopers.betterpickers:library:3.1.0'
+
+    //di
+    compile "com.google.dagger:dagger:2.9"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.9"
+    provided 'javax.annotation:jsr250-api:1.0'
+    //bus
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+
 }
