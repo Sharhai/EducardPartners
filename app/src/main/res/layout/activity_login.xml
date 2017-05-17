@@ -5,12 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
+    android:padding="55dp"
     android:layout_height="match_parent"
     tools:context="sm.educardpartners.ui.LoginActivity">
 
     <EditText
         android:id="@+id/etUsername"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Username"
@@ -20,7 +22,7 @@
 
     <EditText
         android:id="@+id/etPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Password"
@@ -29,8 +31,8 @@
         tools:layout_editor_absoluteY="72dp" />
 
     <Button
-        android:id="@+id/bLogin"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
         tools:layout_editor_absoluteX="148dp"
@@ -38,9 +40,10 @@
 
     <TextView
         android:id="@+id/tvRegisterHere"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:text="Register Here"
+        android:gravity="center"
         tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="193dp" />
 

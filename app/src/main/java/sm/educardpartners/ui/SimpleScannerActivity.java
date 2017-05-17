@@ -6,19 +6,18 @@ import android.os.Bundle;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
-import sm.educardpartners.network.interactor.RegisterInteractor;
 
 /**
  * Created by winify on 5/11/17.
  */
 
-public class SimpleScannerActivity extends Activity implements ZXingScannerView.ResultHandler, RegisterInteractor.Interaction {
+public class SimpleScannerActivity extends Activity implements ZXingScannerView.ResultHandler{
     private ZXingScannerView mScannerView;
 
     @Override
     public void onCreate(Bundle state) {
         super.onCreate(state);
-        new RegisterInteractor(this).register("name","pas","mail");
+
         mScannerView = new ZXingScannerView(this);   // Programmatically initialize the scanner view
         setContentView(mScannerView);                // Set the scanner view as the content view
     }
@@ -46,13 +45,4 @@ public class SimpleScannerActivity extends Activity implements ZXingScannerView.
         mScannerView.resumeCameraPreview(this);
     }
 
-    @Override
-    public void onError(String errorMsg) {
-
-    }
-
-    @Override
-    public void onRegistrationSuccesfull() {
-
-    }
 }

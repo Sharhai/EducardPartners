@@ -14,6 +14,12 @@ public interface EduApi {
             @Query("pass") String pass,
             @Query("email") String email
     );
+
+    @POST("login/")
+    Observable<Response<Object>> login(
+            @Query("name") String name,
+            @Query("pass") String pass
+    );
 //
 //    @POST("oauth/revoke_token/")
 //    Observable<Response<Objects>> logOut(@Query("token") String token, @Query("client_id") String clientId);

@@ -6,10 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context="sm.educardpartners.ui.EduPArt">
 
     <EditText
-    android:id="@+id/etUsername"
+    android:id="@+id/et_name"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:ems="10"
@@ -19,17 +20,17 @@
     tools:layout_editor_absoluteY="120dp" />
 
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/et_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Name"
+        android:hint="Email"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="66dp" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/et_pas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -39,20 +40,29 @@
         tools:layout_editor_absoluteY="174dp" />
 
     <EditText
-        android:id="@+id/Number"
+        android:id="@+id/et_repeat_pas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Number"
+        android:hint="Repeat Password"
         android:inputType="number"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="232dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_reg"
         android:layout_width="271dp"
         android:layout_height="35dp"
         android:text="Register"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="286dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tv_bak"
+        android:text="Bak to login"
+        android:gravity="center"
+        android:layout_height="100dp" />
+
 </LinearLayout>
