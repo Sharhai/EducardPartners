@@ -15,7 +15,7 @@ import sm.educardpartners.network.interactor.LoginInteractor;
 
 public class LoginActivity extends AppCompatActivity implements LoginInteractor.Interaction {
 
-    @BindView(R.id.etName)
+    @BindView(R.id.etUsername)
     EditText name;
     @BindView(R.id.etPassword)
     EditText pass;
