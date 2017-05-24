@@ -37,11 +37,16 @@ public class RegisterActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
         reg.setOnClickListener(v -> {
-            mRegisterInteractor.register(
-                    name.getText().toString(),
-                    pass.getText().toString(),
-                    email.getText().toString()
-            );
+
+
+            startActivity(new Intent(this, BarcodeCaptureActivity.class));
+            finish();
+
+//            mRegisterInteractor.register(
+//                    name.getText().toString(),
+//                    pass.getText().toString(),
+//                    email.getText().toString()
+//            );
         });
 
         back.setOnClickListener(v -> {

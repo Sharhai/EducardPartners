@@ -33,10 +33,14 @@ public class LoginActivity extends AppCompatActivity implements LoginInteractor.
         ButterKnife.bind(this);
 
         login.setOnClickListener(v -> {
-            mLoginInteractor.login(
-                    name.getText().toString(),
-                    pass.getText().toString()
-            );
+            startActivity(new Intent(this, BarcodeCaptureActivity.class));
+            finish();
+
+
+//            mLoginInteractor.login(
+//                    name.getText().toString(),
+//                    pass.getText().toString()
+//            );
         });
 
         register.setOnClickListener(v -> {

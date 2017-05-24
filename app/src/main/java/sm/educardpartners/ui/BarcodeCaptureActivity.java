@@ -18,10 +18,8 @@ package sm.educardpartners.ui;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -29,7 +27,6 @@ import android.hardware.Camera;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -99,9 +96,9 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
             requestCameraPermission();
         }
 
-        Snackbar.make(mGraphicOverlay, "Tap to capture. Pinch/Stretch to zoom",
-                Snackbar.LENGTH_LONG)
-                .show();
+//        Snackbar.make(mGraphicOverlay, "Tap to capture. Pinch/Stretch to zoom",
+//                Snackbar.LENGTH_LONG)
+//                .show();
     }
 
     /**
@@ -131,10 +128,10 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         };
 
         findViewById(R.id.topLayout).setOnClickListener(listener);
-        Snackbar.make(mGraphicOverlay, "perm needed",
-                Snackbar.LENGTH_INDEFINITE)
-                .setAction("ok", listener)
-                .show();
+//        Snackbar.make(mGraphicOverlay, "perm needed",
+//                Snackbar.LENGTH_INDEFINITE)
+//                .setAction("ok", listener)
+//                .show();
     }
 
     /**
@@ -270,17 +267,13 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         Log.e(TAG, "Permission not granted: results len = " + grantResults.length +
                 " Result code = " + (grantResults.length > 0 ? grantResults[0] : "(empty)"));
 
-        DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                finish();
-            }
-        };
+//        DialogInterfasho
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Multitracker sample")
-                .setMessage("no_camera_permission")
-                .setPositiveButton("ok", listener)
-                .show();
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setTitle("Multitracker sample")
+//                .setMessage("no_camera_permission")
+//                .setPositiveButton("ok", listener)
+//                .show();
     }
 
     /**
@@ -295,7 +288,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         if (code != ConnectionResult.SUCCESS) {
             Dialog dlg =
                     GoogleApiAvailability.getInstance().getErrorDialog(this, code, RC_HANDLE_GMS);
-            dlg.show();
+//            dlg.show();
         }
 
         if (mCameraSource != null) {

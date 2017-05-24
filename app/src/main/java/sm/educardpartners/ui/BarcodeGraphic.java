@@ -33,9 +33,12 @@ public class BarcodeGraphic extends GraphicOverlay.Graphic {
     private int mId;
 
     private static final int COLOR_CHOICES[] = {
+//            ContextCompat.getColor(App.getAppComponent().getAppContext(), R.color.colorAccent),
+//            ContextCompat.getColor(App.getAppComponent().getAppContext(), R.color.colorAccent),
+//            ContextCompat.getColor(App.getAppComponent().getAppContext(), R.color.colorAccent),
             Color.BLUE,
-            Color.CYAN,
-            Color.GREEN
+            Color.BLUE,
+            Color.BLUE
     };
 
     private static int mCurrentColorIndex = 0;
