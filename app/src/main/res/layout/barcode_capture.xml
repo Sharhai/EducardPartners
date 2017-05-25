@@ -3,32 +3,35 @@
     android:id="@+id/topLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:keepScreenOn="true"
     android:orientation="vertical">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_marginTop="150dp"
-        android:background="#c3ff0000"
-        android:layout_height="1dp"/>
 
     <sm.educardpartners.ui.camera.CameraSourcePreview
         android:id="@+id/preview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
         <sm.educardpartners.ui.camera.GraphicOverlay
             android:id="@+id/graphicOverlay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"  />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </sm.educardpartners.ui.camera.CameraSourcePreview>
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_gravity="bottom"
-        android:background="@color/colorPrimaryDark"
         android:id="@+id/rv"
-        android:layout_height="200dp" />
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimaryDark" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="150dp"
+        android:background="#c3ff0000" />
 
 </FrameLayout>

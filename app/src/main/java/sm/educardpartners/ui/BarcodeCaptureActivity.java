@@ -45,20 +45,18 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 import java.io.IOException;
 
 import sm.educardpartners.R;
+import sm.educardpartners.models.User;
+import sm.educardpartners.network.interactor.GetUserInteractor;
 import sm.educardpartners.ui.camera.CameraSource;
 import sm.educardpartners.ui.camera.CameraSourcePreview;
 import sm.educardpartners.ui.camera.GraphicOverlay;
 
-public final class BarcodeCaptureActivity extends AppCompatActivity implements BarcodeTrackerFactory.BarcodeItem, BarCodeAdapter.Interactor {
+public final class BarcodeCaptureActivity extends AppCompatActivity implements
+        BarcodeTrackerFactory.BarcodeItem,
+        BarCodeAdapter.Interactor, GetUserInteractor.Interaction {
     private static final String TAG = "Barcode-reader";
-
-    // intent request code to handle updating play services if needed.
     private static final int RC_HANDLE_GMS = 9001;
-
-    // permission request codes need to be < 256
     private static final int RC_HANDLE_CAMERA_PERM = 2;
-
-    // constants used to pass extra data in the intent
     public static final String AutoFocus = "AutoFocus";
     public static final String UseFlash = "UseFlash";
     public static final String BarcodeObject = "Barcode";
@@ -346,17 +344,29 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         return false;
     }
 
+    GetUserInteractor getUserInteractor = new GetUserInteractor(this);
+
     @Override
     public void onNewBarCode(final Barcode barcode) {
         Log.d("TAG", barcode.rawValue);
         runOnUiThread(() -> {
-            adapter.addBarcode(barcode);
-            recyclerView.scrollToPosition(0);
+            getUserInteractor.getUser(barcode.rawValue);
         });
     }
 
     @Override
-    public void onDataPres(String data) {
+    public void onDataPres(User data) {
 
+    }
+
+    @Override
+    public void onError(String errorMsg) {
+        Log.d("error",errorMsg);
+    }
+
+    @Override
+    public void onUserGetSuccesful(User user) {
+        adapter.addBarcode(user);
+        recyclerView.scrollToPosition(0);
     }
 }

@@ -12,9 +12,7 @@ import sm.educardpartners.di.DaggerAppComponent;
 import sm.educardpartners.di.DataProviderModule;
 
 public class App extends Application {
-
     private static AppComponent appComponent;
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -22,7 +20,6 @@ public class App extends Application {
                 .dataProviderModule(new DataProviderModule())
                 .appModule(new AppModule(this))
                 .build();
-
         if (BuildConfig.DEBUG) {
             ButterKnife.setDebug(BuildConfig.DEBUG);
             if (LeakCanary.isInAnalyzerProcess(this)) {
@@ -31,7 +28,6 @@ public class App extends Application {
             LeakCanary.install(this);
         }
     }
-
     public static AppComponent getAppComponent() {
         return appComponent;
     }

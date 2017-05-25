@@ -3,10 +3,17 @@ package sm.educardpartners.network;
 
 import io.reactivex.Observable;
 import retrofit2.Response;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
+import sm.educardpartners.models.User;
 
 public interface EduApi {
+
+    @GET("user/{id}")
+    Observable<Response<User>> getUser(@Path("id") String id);
+
 
     @POST("register/")
     Observable<Response<Object>> register(

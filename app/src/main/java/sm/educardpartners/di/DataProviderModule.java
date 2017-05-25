@@ -16,6 +16,7 @@ import sm.educardpartners.network.EduApi;
 import sm.educardpartners.network.HeadersInterceptor;
 
 import static okhttp3.logging.HttpLoggingInterceptor.Level.BODY;
+import static sm.educardpartners.utils.Constants.ENDPOINT;
 
 @Module
 public class DataProviderModule {
@@ -39,10 +40,12 @@ public class DataProviderModule {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create());
     }
+
+
     @Singleton
     @Provides
     public EduApi provideSocialTwistServices(Retrofit.Builder builder){
-        return builder.baseUrl("localhost").build().create(EduApi.class);
+        return builder.baseUrl("http://"+ENDPOINT+":1161/").build().create(EduApi.class);
     }
 
 }

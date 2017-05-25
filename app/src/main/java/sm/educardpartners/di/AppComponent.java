@@ -19,21 +19,4 @@ public interface AppComponent {
 
     EduApi getApi();
 
-//    ProfileRepository getProfileRepository();
-//
-//    void inject(SingInActivityPresenter __);
-//
-//    void inject(RegisterActivityPresenter __);
-//
-//    void inject(MapFragmentPresenter __);
-//
-//    void inject(ChatRoomFragmentPresenter __);
-//
-//    void inject(TimeLinePresenter __);
-//
-//    void inject(MainActivityPresenter __);
-//
-//    void inject(SearchResultActivityPresenter __);
-
-//    void inject(SocialTwistApiInteractor __);
 }
