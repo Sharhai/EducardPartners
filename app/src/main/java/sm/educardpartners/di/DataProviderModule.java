@@ -42,7 +42,6 @@ public class DataProviderModule {
     }
 
 
-    @Singleton
     @Provides
     public EduApi provideSocialTwistServices(Retrofit.Builder builder){
         return builder.baseUrl("http://"+ENDPOINT+":1161/").build().create(EduApi.class);

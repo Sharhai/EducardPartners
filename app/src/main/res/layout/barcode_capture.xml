@@ -16,7 +16,7 @@
         <sm.educardpartners.ui.camera.GraphicOverlay
             android:id="@+id/graphicOverlay"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"  />
+            android:layout_height="match_parent" />
 
     </sm.educardpartners.ui.camera.CameraSourcePreview>
 
@@ -28,12 +28,34 @@
         android:background="@color/colorPrimaryDark" />
 
     <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
         android:id="@+id/fab"
-        android:layout_marginBottom="180dp"
-        android:src="@drawable/flash"
-        android:layout_marginRight="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_height="wrap_content" />
+        android:layout_marginBottom="180dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/flash" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:orientation="vertical"
+        android:background="#835b5b5b"
+        android:layout_margin="6dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:id="@+id/endpoint"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/bnt_end"
+            android:layout_height="wrap_content"
+            android:text="set" />
+
+
+    </LinearLayout>
 
 </FrameLayout>

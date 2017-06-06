@@ -5,5 +5,5 @@ package sm.educardpartners.utils;
  */
 
 public class Constants {
-    public static final  String ENDPOINT ="192.168.3.84";
+    public static  String ENDPOINT ="192.168.3.84";
 }

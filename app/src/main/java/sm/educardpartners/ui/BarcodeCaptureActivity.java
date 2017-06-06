@@ -34,6 +34,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -51,6 +53,7 @@ import sm.educardpartners.network.interactor.GetUserInteractor;
 import sm.educardpartners.ui.camera.CameraSource;
 import sm.educardpartners.ui.camera.CameraSourcePreview;
 import sm.educardpartners.ui.camera.GraphicOverlay;
+import sm.educardpartners.utils.Constants;
 
 public final class BarcodeCaptureActivity extends AppCompatActivity implements
         BarcodeTrackerFactory.BarcodeItem,
@@ -72,6 +75,9 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements
     FloatingActionButton floatingActionButton;
 
 
+    private EditText endpoint;
+    private Button button;
+
     private static boolean flash = true;
 
     @Override
@@ -83,6 +89,14 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements
         mGraphicOverlay = (GraphicOverlay<BarcodeGraphic>) findViewById(R.id.graphicOverlay);
 
         floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
+
+        endpoint = (EditText) findViewById(R.id.endpoint);
+        button = (Button) findViewById(R.id.bnt_end);
+
+        endpoint.setText(Constants.ENDPOINT);
+        button.setOnClickListener(v -> {
+            Constants.ENDPOINT = endpoint.getText().toString();
+        });
 
         adapter = new BarCodeAdapter(this);
 
