@@ -18,7 +18,7 @@ package sm.educardpartners.ui.camera;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.view.View;
+import android.widget.FrameLayout;
 
 import com.google.android.gms.vision.CameraSource;
 
@@ -45,7 +45,7 @@ import java.util.Vector;
  * from the preview's coordinate system to the view coordinate system.</li>
  * </ol>
  */
-public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
+public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends FrameLayout {
     private final Object mLock = new Object();
     private int mPreviewWidth;
     private float mWidthScaleFactor = 1.0f;
@@ -85,7 +85,8 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
          * scale.
          */
         public float scaleX(float horizontal) {
-            return horizontal * mOverlay.mWidthScaleFactor;
+//            return horizontal * mOverlay.mWidthScaleFactor;
+            return horizontal;
         }
 
         /**

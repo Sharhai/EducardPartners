@@ -23,13 +23,13 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import com.google.android.gms.common.images.Size;
 
 import java.io.IOException;
 
-public class CameraSourcePreview extends ViewGroup {
+public class CameraSourcePreview extends FrameLayout {
     private static final String TAG = "CameraSourcePreview";
 
     private Context mContext;
@@ -95,9 +95,9 @@ public class CameraSourcePreview extends ViewGroup {
                 if (isPortraitMode()) {
                     // Swap width and height sizes when in portrait, since it will be rotated by
                     // 90 degrees
-                    mOverlay.setCameraInfo(min, max, mCameraSource.getCameraFacing());
+                    mOverlay.setCameraInfo(max, max, mCameraSource.getCameraFacing());
                 } else {
-                    mOverlay.setCameraInfo(max, min, mCameraSource.getCameraFacing());
+                    mOverlay.setCameraInfo(max, max, mCameraSource.getCameraFacing());
                 }
                 mOverlay.clear();
             }
@@ -130,7 +130,7 @@ public class CameraSourcePreview extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        int width = 320;
+        int width = 240;
         int height = 240;
         if (mCameraSource != null) {
             Size size = mCameraSource.getPreviewSize();

@@ -10,14 +10,13 @@
 
     <sm.educardpartners.ui.camera.CameraSourcePreview
         android:id="@+id/preview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <sm.educardpartners.ui.camera.GraphicOverlay
             android:id="@+id/graphicOverlay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"  />
 
     </sm.educardpartners.ui.camera.CameraSourcePreview>
 
@@ -28,10 +27,13 @@
         android:layout_gravity="bottom"
         android:background="@color/colorPrimaryDark" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="150dp"
-        android:background="#c3ff0000" />
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:id="@+id/fab"
+        android:layout_marginBottom="180dp"
+        android:src="@drawable/flash"
+        android:layout_marginRight="16dp"
+        android:layout_gravity="bottom|end"
+        android:layout_height="wrap_content" />
 
 </FrameLayout>

@@ -27,6 +27,7 @@ import android.hardware.Camera;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -68,6 +69,10 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements
     private RecyclerView recyclerView;
     private BarCodeAdapter adapter;
 
+    FloatingActionButton floatingActionButton;
+
+
+    private static boolean flash = true;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -76,6 +81,8 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements
 
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
         mGraphicOverlay = (GraphicOverlay<BarcodeGraphic>) findViewById(R.id.graphicOverlay);
+
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
 
         adapter = new BarCodeAdapter(this);
 
@@ -89,14 +96,17 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements
 
         int rc = ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
         if (rc == PackageManager.PERMISSION_GRANTED) {
-            createCameraSource(autoFocus, useFlash);
+            createCameraSource(true, flash);
         } else {
             requestCameraPermission();
         }
 
-//        Snackbar.make(mGraphicOverlay, "Tap to capture. Pinch/Stretch to zoom",
-//                Snackbar.LENGTH_LONG)
-//                .show();
+            floatingActionButton.setOnClickListener(v -> {
+                flash = !flash;
+                startActivity(new Intent(this,BarcodeCaptureActivity.class));
+                finish();
+            });
+
     }
 
     /**
@@ -361,7 +371,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements
 
     @Override
     public void onError(String errorMsg) {
-        Log.d("error",errorMsg);
+        Log.d("error", errorMsg);
     }
 
     @Override
